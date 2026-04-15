@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cars{% endblock %}
+
+{% block body %}
+<h1>Liste des voitures </h1>
+
+<ul>
+    {% for car in cars %}
+        <li>{{ car }}</li>
+    {% endfor %}
+</ul>
+
+{# dump twig #}
+{{ dump(cars) }}
+{% endblock %}
