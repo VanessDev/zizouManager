@@ -2,11 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\PlayerRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: PlayerRepository::class)]
-#[ORM\Table(name: 'player')] // optionnel mais propre
+#[ORM\Entity]
+#[ORM\Table(name: 'player')]
 class Player
 {
     #[ORM\Id]
@@ -16,6 +15,12 @@ class Player
 
     #[ORM\Column(type: 'string', length: 255)]
     private string $name;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private ?string $username = null;
+
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private ?int $number = null;
 
     #[ORM\Column(type: 'integer')]
     private int $score;
@@ -33,6 +38,28 @@ class Player
     public function setName(string $name): self
     {
         $this->name = $name;
+        return $this;
+    }
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(?string $username): self
+    {
+        $this->username = $username;
+        return $this;
+    }
+
+    public function getNumber(): ?int
+    {
+        return $this->number;
+    }
+
+    public function setNumber(?int $number): self
+    {
+        $this->number = $number;
         return $this;
     }
 

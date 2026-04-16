@@ -6,8 +6,13 @@
     <h1>Players page</h1>
 
     <p>
-        <a href="{{ path('app_player_add', { name: 'Vanessa', score: 100 }) }}">
-            Ajouter Vanessa avec score 100
+        <a href="{{ path('app_player_add', {
+            name: 'Vanessa',
+            username: 'Biamonti',
+            number: 10,
+            score: 100
+        }) }}" class="btn btn-primary">
+            Ajouter Vanessa
         </a>
     </p>
 {% endblock %}
