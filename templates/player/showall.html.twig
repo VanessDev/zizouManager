@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les joueurs{% endblock %}
+
+{% block body %}
+    <h1>Liste des joueurs</h1>
+
+    {% for player in players %}
+        <p>
+            {{ player.name }} - {{ player.username }} - numéro {{ player.number }} - score {{ player.score }}
+        </p>
+    {% else %}
+        <p>Aucun joueur</p>
+    {% endfor %}
+{% endblock %}
