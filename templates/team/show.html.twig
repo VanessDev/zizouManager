@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Détail de l’équipe</h1>
+
+    <p><strong>ID :</strong> {{ team.id }}</p>
+    <p><strong>Nom :</strong> {{ team.name }}</p>
+
+    <a href="{{ path('app_team_showall') }}">Retour à la liste</a>
+{% endblock %}

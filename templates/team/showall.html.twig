@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des équipes</h1>
+
+    {% for team in teams %}
+        <div class="team">
+            <strong>{{ team.name }}</strong><br>
+
+            <div class="actions">
+                <a href="{{ path('app_team_show', {id: team.id}) }}">Voir</a>
+                <a href="{{ path('team_update', {id: team.id}) }}">Modifier</a>
+
+                <form method="post" action="{{ path('team_delete', {id: team.id}) }}" style="display:inline;">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ team.id) }}">
+                    <button type="submit" onclick="return confirm('Supprimer cette équipe ?');">
+                        Supprimer
+                    </button>
+                </form>
+            </div>
+        </div>
+    {% else %}
+        <p>Aucune équipe</p>
+    {% endfor %}
+{% endblock %}

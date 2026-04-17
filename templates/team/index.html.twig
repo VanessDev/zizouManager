@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Index des équipes</h1>
+
+    {% for team in teams %}
+        <p>{{ team.name }}</p>
+    {% else %}
+        <p>Aucune équipe</p>
+    {% endfor %}
+{% endblock %}
