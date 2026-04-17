@@ -119,17 +119,22 @@ final class PlayerController extends AbstractController
         ]);
     }
 
-    #[Route('/player/delete/{id}', name: 'player_delete', methods: ['GET'])]
-    public function delete(int $id, EntityManagerInterface $entityManager): Response
-    {
-        $player = $entityManager->getRepository(Player::class)->find($id);
+     #[Route('/player/delete/{id}', name: 'player_delete', methods: ['POST'])]
+    public function delete(
+        int $id,
+        Request $request,
+        EntityManagerInterface $entityManager ): Response 
+        {$player = $entityManager->getRepository(Player::class)->find($id);
 
         if (!$player) {
-            return new Response('Joueur non trouvé');
+            throw $this->createNotFoundException('Joueur non trouvé');
         }
 
-        $entityManager->remove($player);
-        $entityManager->flush();
+
+        if ($this->isCsrfTokenValid('delete' . $player->getId(), $request->request->get('_token'))) {
+            $entityManager->remove($player);
+            $entityManager->flush();
+        }
 
         return $this->redirectToRoute('app_player_showall');
     }
