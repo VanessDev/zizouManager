@@ -1,14 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tous les joueurs{% endblock %}
-
 {% block body %}
     <h1>Liste des joueurs</h1>
 
     {% for player in players %}
-        <p>
-            {{ player.name }} - {{ player.username }} - numéro {{ player.number }} - score {{ player.score }}
-        </p>
+        <div class="player">
+            <strong>{{ player.name }} {{ player.username }}</strong><br>
+            Numéro : {{ player.number }}<br>
+            Score : {{ player.score }}
+
+            <div class="actions">
+                <a href="{{ path('app_player_show', {id: player.id}) }}">Voir</a>
+                <a href="{{ path('player_update', {id: player.id}) }}">Modifier</a>
+
+                
+                <form method="post" action="{{ path('player_delete', {id: player.id}) }}" style="display:inline;">
+                    
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ player.id) }}">
+                    
+                    <button type="submit" onclick="return confirm('Supprimer ce joueur ?');">
+                        Supprimer
+                    </button>
+                </form>
+            </div>
+        </div>
     {% else %}
         <p>Aucun joueur</p>
     {% endfor %}

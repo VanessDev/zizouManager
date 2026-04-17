@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail joueur{% endblock %}
+
+{% block body %}
+    <h1>Détail du joueur</h1>
+
+    <div class="player">
+        <strong>{{ player.name }} {{ player.username }}</strong><br>
+        Numéro : {{ player.number }}<br>
+        Score : {{ player.score }}
+    </div>
+
+    <p>
+        <a href="{{ path('app_player_showall') }}"> Retour à la liste</a>
+        <a href="{{ path('player_update', { id: player.id }) }}"> Modifier</a>
+    </p>
+{% endblock %}

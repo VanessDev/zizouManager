@@ -118,4 +118,19 @@ final class PlayerController extends AbstractController
             'player' => $player
         ]);
     }
+
+    #[Route('/player/delete/{id}', name: 'player_delete', methods: ['GET'])]
+    public function delete(int $id, EntityManagerInterface $entityManager): Response
+    {
+        $player = $entityManager->getRepository(Player::class)->find($id);
+
+        if (!$player) {
+            return new Response('Joueur non trouvé');
+        }
+
+        $entityManager->remove($player);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_player_showall');
+    }
 }
