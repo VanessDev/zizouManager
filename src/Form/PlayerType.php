@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Player;
+use App\Entity\Team;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -70,8 +72,15 @@ class PlayerType extends AbstractType
                 ]
             ])
 
+            ->add('team', EntityType::class, [
+                'class' => Team::class,
+                'choice_label' => 'name',
+                'placeholder' => 'Choisir une équipe',
+                'required' => false
+            ])
+
             ->add('submit', SubmitType::class, [
-                'label' => 'créer le joueur',
+                'label' => 'Créer le joueur',
                 'attr' => [
                     'class' => 'btnForm'
                 ]
@@ -84,5 +93,4 @@ class PlayerType extends AbstractType
             'data_class' => Player::class,
         ]);
     }
-    
 }
