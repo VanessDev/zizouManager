@@ -1,61 +1,205 @@
-/* Fond général */
 body {
-    background-color: #f5c6cb;
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4d4da;
+    color: #4b2230;
 }
 
-/* NAVIGATION */
 nav {
+    max-width: 900px;
+    margin: 30px auto;
     background: white;
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: #4b2230;
     font-weight: bold;
-    margin-right: 15px;
-    transition: 0.3s;
+    font-size: 18px;
 }
 
 nav a:hover {
-    color: #ff4d6d;
+    color: #c05c82;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: #4b2230;
+}
+
+.form-card {
+    background: #fff8fa;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-card label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #4b2230;
+}
+
+.form-input,
+.form-card input[type="text"],
+.form-card input[type="number"],
+.form-card select {
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid #d9a9b8;
+    border-radius: 16px;
+    font-size: 18px;
+    background: white;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.form-input:focus,
+.form-card input[type="text"]:focus,
+.form-card input[type="number"]:focus,
+.form-card select:focus {
+    border-color: #c05c82;
+    box-shadow: 0 0 0 3px rgba(192, 92, 130, 0.15);
+}
+
+.btnForm,
+.form-card button,
+.form-card input[type="submit"] {
+    background: #c05c82;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btnForm:hover,
+.form-card button:hover,
+.form-card input[type="submit"]:hover {
+    background: #a8476b;
+}
+
+.form-card .form-error-message,
+.form-card ul {
+    color: #b03a5b;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+/* BODY */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4d4da;
+    color: #4b2230;
+}
+
+/* NAV */
+nav {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+nav a {
+    text-decoration: none;
+    color: #4b2230;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #c05c82;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 /* TITRE */
 h1 {
-    margin-bottom: 20px;
+    font-size: 48px;
+    margin-bottom: 30px;
 }
 
-/* LISTE JOUEURS */
+/* CARTE JOUEUR */
 .player {
     background: white;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-/* INFOS */
+/* NOM */
 .player strong {
-    font-size: 16px;
+    font-size: 20px;
 }
 
-/* LIENS ACTIONS */
+/* ACTIONS */
+.actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
 
+/* BOUTONS (liens) */
 .actions a {
-    background: #ff4d6d;
+    background: #c05c82;
     color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .actions a:hover {
+    background: #a8476b;
+}
+
+/* BOUTON DELETE */
+.actions button {
     background: #e63950;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.actions button:hover {
+    background: #c72f45;
 }
 
 body {

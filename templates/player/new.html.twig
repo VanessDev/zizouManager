@@ -1,8 +1,18 @@
-{# <form action="{{ path('app_player_new') }}" method="post">
-    <input type="text" name="name" required placeholder="Nom">
-    <input type="number" name="score" required placeholder="Score">
-    <button type="submit">Add player</button>
-</form> #}
+{% extends 'base.html.twig' %}
 
+{% block title %}Nouveau joueur{% endblock %}
 
-{{ form(form) }}
+{% block body %}
+    <h1>Ajouter un joueur</h1>
+
+    <div class="form-card">
+        {{ form_start(form) }}
+            {{ form_row(form.name) }}
+            {{ form_row(form.username) }}
+            {{ form_row(form.number) }}
+            {{ form_row(form.score) }}
+            {{ form_row(form.team) }}
+            {{ form_row(form.submit) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

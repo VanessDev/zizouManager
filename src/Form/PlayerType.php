@@ -25,10 +25,11 @@ class PlayerType extends AbstractType
                 'required' => true,
                 'attr' => [
                     'placeholder' => 'le nom',
-                    'maxlength' => 255
+                    'maxlength' => 255,
+                    'class' => 'form-input'
                 ],
                 'constraints' => [
-                    new NotBlank(message: 'le nom est obligatoire'),
+                    new NotBlank(message: 'Le nom est obligatoire'),
                     new Length(min: 3, max: 255)
                 ]
             ])
@@ -38,10 +39,11 @@ class PlayerType extends AbstractType
                 'required' => true,
                 'attr' => [
                     'placeholder' => 'le prénom',
-                    'maxlength' => 255
+                    'maxlength' => 255,
+                    'class' => 'form-input'
                 ],
                 'constraints' => [
-                    new NotBlank(message: 'le prénom est obligatoire'),
+                    new NotBlank(message: 'Le prénom est obligatoire'),
                     new Length(min: 3, max: 255)
                 ]
             ])
@@ -52,11 +54,12 @@ class PlayerType extends AbstractType
                 'attr' => [
                     'placeholder' => 'le numéro',
                     'min' => 1,
-                    'max' => 99
+                    'max' => 99,
+                    'class' => 'form-input'
                 ],
                 'constraints' => [
-                    new NotBlank(message: 'numéro obligatoire'),
-                    new Positive(message: 'le numéro doit être positif')
+                    new NotBlank(message: 'Numéro obligatoire'),
+                    new Positive(message: 'Le numéro doit être positif')
                 ]
             ])
 
@@ -65,10 +68,11 @@ class PlayerType extends AbstractType
                 'required' => false,
                 'attr' => [
                     'placeholder' => 'score',
-                    'min' => 0
+                    'min' => 0,
+                    'class' => 'form-input'
                 ],
                 'constraints' => [
-                    new Positive(message: 'le score doit être positif')
+                    new Positive(message: 'Le score doit être positif')
                 ]
             ])
 
@@ -76,7 +80,10 @@ class PlayerType extends AbstractType
                 'class' => Team::class,
                 'choice_label' => 'name',
                 'placeholder' => 'Choisir une équipe',
-                'required' => false
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-input'
+                ]
             ])
 
             ->add('submit', SubmitType::class, [
