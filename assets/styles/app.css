@@ -57,3 +57,169 @@ h1 {
 .actions a:hover {
     background: #e63950;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4d4da;
+    color: #4b2230;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fff8fa;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+nav {
+    max-width: 900px;
+    margin: 30px auto 20px auto;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4b2230;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #b6557a;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 52px;
+    color: #4b2230;
+}
+
+h2, h3 {
+    color: #4b2230;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #4b2230;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid #d9a9b8;
+    border-radius: 16px;
+    font-size: 18px;
+    background: white;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #c05c82;
+    box-shadow: 0 0 0 3px rgba(192, 92, 130, 0.15);
+}
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 10px;
+}
+
+button,
+.btn,
+input[type="submit"] {
+    display: inline-block;
+    background: #c05c82;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+button:hover,
+.btn:hover,
+input[type="submit"]:hover {
+    background: #a8476b;
+}
+
+a {
+    color: #8b3557;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #b6557a;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+th,
+td {
+    padding: 18px;
+    text-align: left;
+    border-bottom: 1px solid #f1d9df;
+}
+
+th {
+    background: #c05c82;
+    color: white;
+    font-size: 18px;
+}
+
+tr:hover {
+    background: #fff1f5;
+}
+
+.actions a {
+    margin-right: 12px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
